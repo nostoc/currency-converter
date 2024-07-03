@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 //Types of widgets
@@ -12,9 +12,20 @@ void main() {
 //State
 // refers to data that will determine how a widget looks like
 
+//Material design
+//cupertino design
+
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Text("Hello Dart !", textDirection: TextDirection.rtl);
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text("Hello Flutter & Dart ! 😎"),
+        ),
+      ),
+    );
   }
 }
