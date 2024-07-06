@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CurrencyConverterMaterialPage extends StatelessWidget {
   const CurrencyConverterMaterialPage({super.key});
@@ -29,24 +28,34 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Color.fromRGBO(24, 119, 242, 1),
               ),
             ),
-            TextField(
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-              decoration: InputDecoration(
-                hintText: "Please enter the amount in USD",
-                hintStyle: const TextStyle(
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                style: const TextStyle(
                   fontSize: 20,
-                  color: Color.fromRGBO(112, 112, 112, 1),
                 ),
-                prefixIcon: const Icon(Icons.monetization_on_rounded),
-                prefixIconColor: const Color.fromRGBO(112, 112, 112, 1),
-                filled: true,
-                fillColor: const Color.fromRGBO(240, 240, 240, 1),
-                focusedBorder: border,
-                enabledBorder: border,
+                decoration: InputDecoration(
+                  hintText: "Please enter the amount in USD",
+                  hintStyle: const TextStyle(
+                    fontSize: 20,
+                    color: Color.fromRGBO(112, 112, 112, 1),
+                  ),
+                  prefixIcon: const Icon(Icons.monetization_on_rounded),
+                  prefixIconColor: const Color.fromRGBO(112, 112, 112, 1),
+                  filled: true,
+                  fillColor: const Color.fromRGBO(240, 240, 240, 1),
+                  focusedBorder: border,
+                  enabledBorder: border,
+                ),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
               ),
             ),
+            TextButton(
+                onPressed: () {
+                  print("nothing to convert");
+                },
+                child: const Text("Convert"))
           ],
         ),
       ),
