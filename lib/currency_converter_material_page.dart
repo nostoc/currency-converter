@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -55,24 +56,27 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: TextButton(
+              child: ElevatedButton(
                 onPressed: () {
                   if (kDebugMode) {
                     print("Convert button pressed");
                   }
                 },
-                style: const ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    Color.fromRGBO(24, 119, 242, 1),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(24, 119, 242, 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(60),
                   ),
-                  foregroundColor: WidgetStatePropertyAll(
-                    Color.fromRGBO(255, 255, 255, 1),
-                  ),
-                  minimumSize: WidgetStatePropertyAll(
-                    Size(double.infinity, 50),
-                  ),
+                  minimumSize: const Size(double.infinity, 50),
+                  foregroundColor: Colors.white,
                 ),
-                child: const Text("Convert"),
+                child: const Text("Convert",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  
+                ),
+                  ),
               ),
             ),
           ],
